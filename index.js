@@ -1,6 +1,6 @@
 const Discord = require("discord.js");
 const bot = new Discord.Client();
-const authToken = "NTE0NjUxODkxMTYzMjAxNTQ2.DtZwAQ.1DyOksmpbNILGripT5ECi87I3vo";
+const authToken = "%AUTHTOKEN%";
 
 bot.on("message", async message => {
   if (!message.guild) return;
