@@ -1,13 +1,13 @@
 const Discord = require("discord.js");
 const bot = new Discord.Client();
-const authToken = "%AUTH_TOKEN%";
+const authToken = "NTE0NjUxODkxMTYzMjAxNTQ2.DtZwAQ.1DyOksmpbNILGripT5ECi87I3vo";
 
 bot.on("message", async message => {
   if (!message.guild) return;
 
   if(message.content == "$help") {
-    message.reply(`
-      :BPJennie:  :BPJennie:  Jennie Bot Commands :BPJennie:  :BPJennie: 
+    message.channel.send(`
+      <:BPJennie:506417135669608448>  <:BPJennie:506417135669608448>  Jennie Bot Commands <:BPJennie:506417135669608448>  <:BPJennie:506417135669608448> 
       (Case Sensitive)
 
       $hentai - Try it
@@ -20,15 +20,15 @@ bot.on("message", async message => {
 
       $kill - Kick bot from Server
 
-      $uhh - Lisa's Unnnhhh :BPLisa: 
+      $uhh - Lisa's Unnnhhh <:BPLisa:506417135652831232>
 
-      $boombayah - Play song: Blackpink - Boombayah :BPRose: 
+      $boombayah - Play song: Blackpink - Boombayah <:BPRose:506417136864985107>
 
-      $ddudu - Play song: Blackpink - Ddu-du Ddu-du  :BPJisoo: 
+      $ddudu - Play song: Blackpink - Ddu-du Ddu-du  <:BPJisoo:506417135703162922>
 
-      $TWICE - Twice's !TWICE! :TWICESana: 
+      $TWICE - Twice's !TWICE! <:TWICESana:491197937146396702> 
 
-      $whatislove - Play song: Twice - What is Love? :TWICETzuyu:
+      $whatislove - Play song: Twice - What is Love? <:TWICETzuyu:491197937737793548>
     `)
   }
 
