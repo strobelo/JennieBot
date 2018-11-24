@@ -5,6 +5,33 @@ const authToken = "%AUTH_TOKEN%";
 bot.on("message", async message => {
   if (!message.guild) return;
 
+  if(message.content == "$help") {
+    message.reply(`
+      :BPJennie:  :BPJennie:  Jennie Bot Commands :BPJennie:  :BPJennie: 
+      (Case Sensitive)
+
+      $hentai - Try it
+
+      $Periun - Only Periun can use this command. Shows his Twitter
+
+      $join - Invite bot to voice channel
+
+      $leave - Kick bot from voice channel
+
+      $kill - Kick bot from Server
+
+      $uhh - Lisa's Unnnhhh :BPLisa: 
+
+      $boombayah - Play song: Blackpink - Boombayah :BPRose: 
+
+      $ddudu - Play song: Blackpink - Ddu-du Ddu-du  :BPJisoo: 
+
+      $TWICE - Twice's !TWICE! :TWICESana: 
+
+      $whatislove - Play song: Twice - What is Love? :TWICETzuyu:
+    `)
+  }
+
   // HENTAI BAIT
   if (message.content == "$hentai") {
     let permission = message.guild.roles.find("name", "BOT Manager");
@@ -68,6 +95,7 @@ bot.on("message", async message => {
     message.reply("UNNHHH");
     voiceChannel.join().then(connection => {
       const dispatcher = connection.playFile("Audio/UHHH.mp3", {});
+      dispatcher.setVolume(0.4);
       dispatcher.on("end", end => {
         setTimeout(function() {
           voiceChannel.leave();
@@ -86,6 +114,7 @@ bot.on("message", async message => {
       voiceChannel.join().then(connection => {
         message.channel.send("OPPA!");
         const dispatcher = connection.playFile("Audio/boombayah.mp3", {});
+        dispatcher.setVolume(0.4);
         dispatcher.on("end", end => {
           voiceChannel.leave();
           isReady = true;
@@ -105,6 +134,7 @@ bot.on("message", async message => {
       voiceChannel.join().then(connection => {
         message.channel.send("HIT YOU WITH DAT DDU-DU DDU-DU DU!");
         const dispatcher = connection.playFile("Audio/ddudu.mp3", {});
+        dispatcher.setVolume(0.4);
         dispatcher.on("end", end => {
           voiceChannel.leave();
           isReady = true;
@@ -124,6 +154,7 @@ bot.on("message", async message => {
       voiceChannel.join().then(connection => {
         message.channel.send("TWICE!");
         const dispatcher = connection.playFile("Audio/TWICE.mp3", {});
+        dispatcher.setVolume(0.4);
         dispatcher.on("end", end => {
           setTimeout(function() {
             voiceChannel.leave();
@@ -145,6 +176,7 @@ bot.on("message", async message => {
       voiceChannel.join().then(connection => {
         message.channel.send("I WANNA KNOW!");
         const dispatcher = connection.playFile("Audio/whatIsLove.mp3", {});
+        dispatcher.setVolume(0.4);
         dispatcher.on("end", end => {
           voiceChannel.leave();
           isReady = true;
